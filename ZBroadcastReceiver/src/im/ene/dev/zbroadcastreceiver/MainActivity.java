@@ -106,12 +106,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		try {
-			unregisterReceiver(mReceiver);
-		} catch (Exception er) {
-			er.printStackTrace();
-		}
-		
-		try {
 			stopService(mServiceIntent);
 		} catch (Exception er) {
 			er.printStackTrace();

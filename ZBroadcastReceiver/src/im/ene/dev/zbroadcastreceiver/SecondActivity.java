@@ -72,11 +72,6 @@ public class SecondActivity extends Activity implements OnClickListener, Receive
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		try {
-			unregisterReceiver(mReceiver);
-		} catch (Exception er) {
-			er.printStackTrace();
-		}
 		finish();
 	}
 
