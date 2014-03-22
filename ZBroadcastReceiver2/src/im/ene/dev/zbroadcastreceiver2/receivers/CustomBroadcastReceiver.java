@@ -1,4 +1,4 @@
-package im.ene.zbroadcastreceiver2.receivers;
+package im.ene.dev.zbroadcastreceiver2.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
