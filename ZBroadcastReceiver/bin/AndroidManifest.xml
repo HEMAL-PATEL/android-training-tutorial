@@ -31,7 +31,7 @@
         </activity>
 
         <service
-            android:name="im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastService"
+            android:name="im.ene.dev.zbroadcastreceiver.services.CustomBroadcastService"
             android:enabled="true" >
         </service>
     </application>

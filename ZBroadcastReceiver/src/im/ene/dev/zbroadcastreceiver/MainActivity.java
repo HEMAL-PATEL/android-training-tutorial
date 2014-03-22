@@ -1,8 +1,8 @@
 package im.ene.dev.zbroadcastreceiver;
 
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastReceiver;
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastReceiver.ReceiverInterface;
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastService;
+import im.ene.dev.zbroadcastreceiver.receivers.CustomBroadcastReceiver;
+import im.ene.dev.zbroadcastreceiver.receivers.CustomBroadcastReceiver.OnBroadcastReceiveListener;
+import im.ene.dev.zbroadcastreceiver.services.CustomBroadcastService;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity implements OnClickListener, ReceiverInterface {
+public class MainActivity extends ActionBarActivity implements OnClickListener, OnBroadcastReceiveListener {
 
 	private Button mButton;
 	private TextView mTextView;
@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
 		mTextView.setOnClickListener(this);
 
 		mReceiver = new CustomBroadcastReceiver();
-		mReceiver.setReceiverInterface(this);
+		mReceiver.setOnBroadcastReceiveListener(this);
 
 	}
 
@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
 	}
 
 	@Override
-	public void updateTextView(Intent intent) {
+	public void onBroadcastReceiveUpdateUI(Intent intent) {
 		mTextView.setText("MAIN - " + intent.getStringExtra("text"));
 	}
 

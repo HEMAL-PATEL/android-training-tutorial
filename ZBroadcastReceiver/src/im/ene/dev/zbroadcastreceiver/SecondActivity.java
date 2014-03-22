@@ -1,8 +1,8 @@
 package im.ene.dev.zbroadcastreceiver;
 
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastReceiver;
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastReceiver.ReceiverInterface;
-import im.ene.dev.zbroadcastreceiver.receiver.CustomBroadcastService;
+import im.ene.dev.zbroadcastreceiver.receivers.CustomBroadcastReceiver;
+import im.ene.dev.zbroadcastreceiver.receivers.CustomBroadcastReceiver.OnBroadcastReceiveListener;
+import im.ene.dev.zbroadcastreceiver.services.CustomBroadcastService;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SecondActivity extends Activity implements OnClickListener, ReceiverInterface {
+public class SecondActivity extends Activity implements OnClickListener, OnBroadcastReceiveListener {
 
 	private Button mButton;
 	private Context mContext;
@@ -36,7 +36,7 @@ public class SecondActivity extends Activity implements OnClickListener, Receive
 		mTextView.setOnClickListener(this);
 		
 		mReceiver = new CustomBroadcastReceiver();
-		mReceiver.setReceiverInterface(this);
+		mReceiver.setOnBroadcastReceiveListener(this);
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class SecondActivity extends Activity implements OnClickListener, Receive
 	}
 
 	@Override
-	public void updateTextView(Intent intent) {
+	public void onBroadcastReceiveUpdateUI(Intent intent) {
 		mLatestString = "SUB - " + intent.getStringExtra("text");
 		mTextView.setText(mLatestString);
 		

@@ -1,4 +1,4 @@
-package im.ene.dev.zbroadcastreceiver.receiver;
+package im.ene.dev.zbroadcastreceiver.services;
 
 import android.app.Service;
 import android.content.Intent;
@@ -20,7 +20,8 @@ public class CustomBroadcastService extends Service {
 
 	@Override
 	public void onCreate() {
-		mIntent = new Intent(BROADCAST_ACTION);
+		/* this intent will be used to send broadcast */
+		mIntent = new Intent(CustomBroadcastService.BROADCAST_ACTION);
 		counter = 0;
 		mHandler = new Handler();
 		super.onCreate();
