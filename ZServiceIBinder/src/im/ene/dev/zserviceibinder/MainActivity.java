@@ -1,6 +1,5 @@
 package im.ene.dev.zserviceibinder;
 
-import im.ene.dev.zserviceibinder.R;
 import im.ene.dev.zserviceibinder.services.CustomService;
 import android.content.ComponentName;
 import android.content.Context;
