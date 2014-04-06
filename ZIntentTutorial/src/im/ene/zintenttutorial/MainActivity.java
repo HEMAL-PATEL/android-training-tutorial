@@ -64,37 +64,37 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.btn_topleft:
 			mActivityIntent.setAction(PRESS_TOPLEFT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_BOTLEFT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_BOTLEFT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_topright:
 			mActivityIntent.setAction(PRESS_TOPRIGHT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_TOPRIGHT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_TOPRIGHT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_midleft:
 			mActivityIntent.setAction(PRESS_MIDLEFT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_MIDLEFT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_MIDLEFT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_midright:
 			mActivityIntent.setAction(PRESS_MIDRIGHT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_MIDRIGHT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_MIDRIGHT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_botleft:
 			mActivityIntent.setAction(PRESS_BOTLEFT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_BOTLEFT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_BOTLEFT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_botright:
 			mActivityIntent.setAction(PRESS_BOTRIGHT_BUTTON);
-			mActivityIntent.putExtra("action", PRESS_BOTRIGHT_BUTTON);
+//			mActivityIntent.putExtra("action", PRESS_BOTRIGHT_BUTTON);
 			sendBroadcast(mActivityIntent);
 			break;
 		}
