@@ -1,5 +1,6 @@
 package im.ene.zintenttutorial;
 
+import im.ene.zintenttutorial.services.CustomService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -51,7 +52,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	}
 
 	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		startService(new Intent(this, CustomService.class));
+	}
+	
+	@Override
 	public void onClick(View v) {
+		
 		switch (v.getId()) {
 		case R.id.btn_topleft:
 			mActivityIntent.setAction(PRESS_TOPLEFT_BUTTON);
@@ -60,23 +69,33 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			break;
 
 		case R.id.btn_topright:
-
+			mActivityIntent.setAction(PRESS_TOPRIGHT_BUTTON);
+			mActivityIntent.putExtra("action", PRESS_TOPRIGHT_BUTTON);
+			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_midleft:
-
+			mActivityIntent.setAction(PRESS_MIDLEFT_BUTTON);
+			mActivityIntent.putExtra("action", PRESS_MIDLEFT_BUTTON);
+			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_midright:
-
+			mActivityIntent.setAction(PRESS_MIDRIGHT_BUTTON);
+			mActivityIntent.putExtra("action", PRESS_MIDRIGHT_BUTTON);
+			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_botleft:
-
+			mActivityIntent.setAction(PRESS_BOTLEFT_BUTTON);
+			mActivityIntent.putExtra("action", PRESS_BOTLEFT_BUTTON);
+			sendBroadcast(mActivityIntent);
 			break;
 
 		case R.id.btn_botright:
-
+			mActivityIntent.setAction(PRESS_BOTRIGHT_BUTTON);
+			mActivityIntent.putExtra("action", PRESS_BOTRIGHT_BUTTON);
+			sendBroadcast(mActivityIntent);
 			break;
 		}
 
