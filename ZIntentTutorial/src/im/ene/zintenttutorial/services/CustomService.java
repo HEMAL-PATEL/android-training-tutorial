@@ -29,12 +29,12 @@ public class CustomService extends Service implements
 		mReceiver.setOnBroadcastReceiveListener(this);
 
 		mIntentFilter = new IntentFilter();
-		
+
 		mIntentFilter.addAction(MainActivity.PRESS_TOPLEFT_BUTTON);
 		mIntentFilter.addAction(MainActivity.PRESS_TOPRIGHT_BUTTON);
 		mIntentFilter.addAction(MainActivity.PRESS_MIDLEFT_BUTTON);
 		mIntentFilter.addAction(MainActivity.PRESS_MIDRIGHT_BUTTON);
-		
+
 		registerReceiver(mReceiver, mIntentFilter);
 
 		super.onCreate();
@@ -50,8 +50,18 @@ public class CustomService extends Service implements
 	@Override
 	public void onBroadcastReceiveUpdateUI(Intent intent) {
 		String action = intent.getAction();
-		Toast.makeText(getBaseContext(), action + "", Toast.LENGTH_SHORT)
-				.show();
+		switch (action) {
+		case MainActivity.PRESS_TOPLEFT_BUTTON:
+			Toast.makeText(getBaseContext(), "top-left button is clicked", Toast.LENGTH_SHORT)
+					.show();
+			break;
+			
+		case MainActivity.PRESS_MIDRIGHT_BUTTON:
+			Toast.makeText(getBaseContext(), "mid-right button is clicked", Toast.LENGTH_SHORT)
+					.show();
+			break;
+		}
+
 	}
 
 	@Override
