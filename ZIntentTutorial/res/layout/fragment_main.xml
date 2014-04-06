@@ -85,4 +85,13 @@
             android:text="BOT-RIGHT"/>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/bot_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/copyright"
+        android:textSize="10sp" />
 </RelativeLayout>
