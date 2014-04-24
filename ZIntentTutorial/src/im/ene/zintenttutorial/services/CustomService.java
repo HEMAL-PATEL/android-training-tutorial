@@ -50,15 +50,19 @@ public class CustomService extends Service implements
 	@Override
 	public void onBroadcastReceiveUpdateUI(Intent intent) {
 		String action = intent.getAction();
+
+		// compatible with KitKat and above, to avoid errors, you should use
+		// if/else instead;
+
 		switch (action) {
 		case MainActivity.PRESS_TOPLEFT_BUTTON:
-			Toast.makeText(getBaseContext(), "top-left button is clicked", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(getBaseContext(), "top-left button is clicked",
+					Toast.LENGTH_SHORT).show();
 			break;
-			
+
 		case MainActivity.PRESS_MIDRIGHT_BUTTON:
-			Toast.makeText(getBaseContext(), "mid-right button is clicked", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(getBaseContext(), "mid-right button is clicked",
+					Toast.LENGTH_SHORT).show();
 			break;
 		}
 
