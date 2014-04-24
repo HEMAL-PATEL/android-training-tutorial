@@ -100,7 +100,7 @@ public class VideoControllerView extends FrameLayout {
 		mUseFastForward = true;
 		mFromXml = true;
 
-		Log.i(TAG, TAG);
+		Log.i(TAG, "new instance - attr");
 	}
 
 	public VideoControllerView(Context context, boolean useFastForward) {
@@ -108,13 +108,13 @@ public class VideoControllerView extends FrameLayout {
 		mContext = context;
 		mUseFastForward = useFastForward;
 
-		Log.i(TAG, TAG);
+		Log.i(TAG, "new instance - boolean");
 	}
 
 	public VideoControllerView(Context context) {
 		this(context, true);
 
-		Log.i(TAG, TAG);
+		Log.i(TAG, "new instance - context");
 	}
 
 	@Override

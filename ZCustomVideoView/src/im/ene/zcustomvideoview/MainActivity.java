@@ -115,7 +115,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener,
 		mController.setAnchorView(mPlayerContainer);
 		mController.setMediaPlayer(this);
 		mVideoView.start();
-
 	}
 
 	@Override
@@ -187,11 +186,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener,
 	@Override
 	public void toggleFullScreen() {
 		hideContent();
+		
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		this.getWindow().clearFlags(
 				WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		// this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+		// WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
+		this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
 	}
 
 	@Override
