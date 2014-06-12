@@ -1,13 +1,16 @@
 package com.flavienlaurent.vdh;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.flavienlaurent.vdh.YoutubeLayout.YoutubeLayoutListener;
 
 /**
  * Created by Flavien Laurent (flavienlaurent.com) on 23/08/13.
@@ -19,15 +22,24 @@ public class YoutubeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_youtube);
 
-//		final TextView viewHeader = (TextView) findViewById(R.id.header);
+		// final TextView viewHeader = (TextView) findViewById(R.id.header);
 		final YoutubeLayout youtubeLayout = (YoutubeLayout) findViewById(R.id.dragLayout);
+		youtubeLayout.setYoutubeLayoutListener(new YoutubeLayoutListener() {
+
+			@Override
+			public void onHeadViewClickListener(View view) {
+				Toast.makeText(getBaseContext(), "clicked", Toast.LENGTH_SHORT)
+						.show();
+			}
+		});
+
 		final ListView listView = (ListView) findViewById(R.id.listView);
 
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int i, long l) {
-//				viewHeader.setText(listView.getAdapter().getItem(i).toString());
+				// viewHeader.setText(listView.getAdapter().getItem(i).toString());
 				youtubeLayout.setVisibility(View.VISIBLE);
 				youtubeLayout.maximize();
 			}

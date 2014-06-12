@@ -263,9 +263,9 @@ public class YoutubeLayout extends ViewGroup {
 					if (mLayoutListener != null)
 						mLayoutListener.onHeadViewClickListener(mHeaderView);
 				} else {
-					if (mDragOffset > 0.1 && vY > 0) {
+					if (vY > 0) {
 						minimize();
-					} else if (mDragOffset < 0.85 && vY < 0) {
+					} else {
 						maximize();
 					}
 				}
