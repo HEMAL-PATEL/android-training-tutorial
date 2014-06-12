@@ -57,6 +57,7 @@ public class MainActivity extends ActionBarActivity {
 				mImage2.startAnimation(animation_fadeout);
 			}
 		});
+		
 	}
 
 	private AnimationListener fadeout_animation_listener = new AnimationListener() {
