@@ -22,7 +22,7 @@ public class YoutubeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_youtube);
 
-		// final TextView viewHeader = (TextView) findViewById(R.id.header);
+		final TextView viewHeader = (TextView) findViewById(R.id.header);
 		final YoutubeLayout youtubeLayout = (YoutubeLayout) findViewById(R.id.dragLayout);
 		youtubeLayout.setYoutubeLayoutListener(new YoutubeLayoutListener() {
 
@@ -39,7 +39,7 @@ public class YoutubeActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int i, long l) {
-				// viewHeader.setText(listView.getAdapter().getItem(i).toString());
+				viewHeader.setText(listView.getAdapter().getItem(i).toString());
 				youtubeLayout.setVisibility(View.VISIBLE);
 				youtubeLayout.maximize();
 			}
