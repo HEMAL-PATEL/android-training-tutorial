@@ -11,7 +11,6 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 /**
  * Created by Flavien Laurent (flavienlaurent.com) on 23/08/13.
@@ -105,8 +104,8 @@ public class YoutubeLayout extends ViewGroup {
 
 			mDragOffset = (float) top / mVerticalDragRange;
 
-			mHeaderView.setPivotX(mHeaderView.getWidth() - 20);
-			mHeaderView.setPivotY(mHeaderView.getHeight() - 20);
+			mHeaderView.setPivotX(mHeaderView.getWidth());
+			mHeaderView.setPivotY(mHeaderView.getHeight());
 			mHeaderView.setScaleX(1 - mDragOffset / 2);
 			mHeaderView.setScaleY(1 - mDragOffset / 2);
 
@@ -169,16 +168,14 @@ public class YoutubeLayout extends ViewGroup {
 		final int action = MotionEventCompat.getActionMasked(ev);
 
 		if ((action != MotionEvent.ACTION_DOWN)) {
-			// user doesn't touch the screen, leave the action to parent.
 			mDragHelper.cancel();
 			return super.onInterceptTouchEvent(ev);
 		}
 
 		if (action == MotionEvent.ACTION_CANCEL
 				|| action == MotionEvent.ACTION_UP) {
-			// finish or cancel touch event
 			mDragHelper.cancel();
-			return false;	// not a intercept touch event
+			return false;
 		}
 
 		final float x = ev.getX();
@@ -205,7 +202,7 @@ public class YoutubeLayout extends ViewGroup {
 			}
 		}
 		}
-		
+
 		return !(mDragHelper.shouldInterceptTouchEvent(ev) || interceptTap);
 	}
 
@@ -317,7 +314,7 @@ public class YoutubeLayout extends ViewGroup {
 				.layout(0, mTop + mHeaderView.getMeasuredHeight(), r, mTop + b);
 
 		if (mTop + mHeaderView.getMeasuredHeight() >= getHeight()) {
-			// TODO header view is on the bottom
+			// TODO
 		} else {
 			// TODO
 		}
